@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto !important;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Parent container that will be pinned by GSAP */
+.animation-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* GSAP ScrollTrigger will expand this with a pin-spacer */
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Canvas is absolute to fit the pinned section perfectly without layout shifts */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none; /* Let clicks pass through */
+}
+
+/* Plain blank sections following the scroll animation */
+.blank-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000; /* Solid plain black */
+    z-index: 10;
+}
