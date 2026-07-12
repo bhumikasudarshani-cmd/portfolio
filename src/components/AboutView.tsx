@@ -27,7 +27,7 @@ export default function AboutView({ onShowToast }: AboutViewProps) {
           About Me
         </h2>
         
-        <p className="text-zinc-400 font-normal text-xs sm:text-sm md:text-base leading-relaxed max-w-md select-text selection:bg-blue-500/30">
+        <p className="text-zinc-200 font-normal text-xs sm:text-sm md:text-base leading-relaxed max-w-md select-text selection:bg-blue-500/30">
           I'm Bhumika Sudarshani, a passionate Computer Science Undergrad specializing in Full-Stack development. I love building beautiful, functional and user-friendly web applications that solve real-world problems.
         </p>
 

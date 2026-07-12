@@ -167,9 +167,28 @@ export default function ScrollCanvas() {
       scrollTrigger: {
         trigger: "#portfolio-root",
         start: "top top",
-        endTrigger: "#certificates-section-container",
-        end: "bottom bottom",
+        endTrigger: "#certificates",
+        end: "top top",
         scrub: true, // Direct frame synchronization (no easing delay at the bottom)
+        onUpdate: (self) => {
+          if (canvas) {
+            if (self.progress >= 0.995) {
+              canvas.style.display = "none";
+            } else {
+              canvas.style.display = "block";
+            }
+          }
+        },
+        onLeave: () => {
+          if (canvas) {
+            canvas.style.display = "none";
+          }
+        },
+        onEnterBack: () => {
+          if (canvas) {
+            canvas.style.display = "block";
+          }
+        },
       },
       onUpdate: () => {
         scrollProgress = pinState.progress;

@@ -85,17 +85,18 @@ export default function CertificatesView() {
   );
 
   return (
-    <motion.div
-      key="certificates-view"
-      initial={{ opacity: 0, x: -30 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 30 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <div
       className="flex flex-col items-start w-full select-none"
       id="certificates-view"
     >
-      {/* Title Block spanning the full width above the columns */}
-      <div className="flex flex-col items-start mb-10 text-left">
+      {/* Title Block - Animated strictly on scroll when in viewport */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex flex-col items-start mb-10 text-left w-full"
+      >
         <div className="flex items-center gap-3">
           <span className="w-6 h-[2px] bg-[#EAB308]" />
           <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#EAB308] uppercase">
@@ -106,10 +107,16 @@ export default function CertificatesView() {
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-1.5 leading-tight font-sans">
           Verified Credentials
         </h2>
-      </div>
+      </motion.div>
 
-      {/* Two-column layout grid: 3 certificates left, 3 certificates right */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+      {/* Two-column layout grid - Animated strictly on scroll when in viewport */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full"
+      >
         {/* Left Column Stack */}
         <div className="flex flex-col gap-4 w-full">
           {leftCertificates.map(renderCertCard)}
@@ -119,7 +126,7 @@ export default function CertificatesView() {
         <div className="flex flex-col gap-4 w-full">
           {rightCertificates.map(renderCertCard)}
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

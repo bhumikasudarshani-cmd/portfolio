@@ -89,25 +89,18 @@ export default function MySkillsView() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 w-full select-none"
+      className="flex flex-col items-start justify-start gap-6 w-full select-none"
       id="skills-view-section"
     >
-      {/* Left Column: Title Block matching Education and About sections */}
-      <div className="flex-1 flex flex-col items-start text-left">
-        <div className="flex items-center gap-3">
-          <span className="w-6 h-[2px] bg-[#ff3c00]" />
-          <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#ff3c00] uppercase">
-            SKILLS
-          </span>
-        </div>
-        
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-1.5 mb-4 leading-tight font-sans">
+      {/* Title Block - Aligned left */}
+      <div className="flex flex-col items-start text-left">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-1.5 mb-2 leading-tight font-sans">
           My Skills
         </h2>
       </div>
 
-      {/* Right Column: Skills Panel Card shifted to the right, matching exact card widths */}
-      <div className="w-full lg:w-[380px] flex-shrink-0">
+      {/* Card Wrapper placed directly below the title, aligned left */}
+      <div className="w-full lg:w-[760px] flex-shrink-0">
         <div className="w-full bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col gap-5 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 relative overflow-hidden">
           {/* Skill list */}
           <SkillList

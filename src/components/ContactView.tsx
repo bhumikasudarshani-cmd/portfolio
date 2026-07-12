@@ -52,7 +52,7 @@ export default function ContactView({ onShowToast }: ContactViewProps) {
         Get in
       </span>
       
-      <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight select-none mt-1 leading-none text-white mb-6">
+      <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight select-none mt-1 leading-none text-[#FACC15] filter drop-shadow-[0_0_20px_rgba(250,204,21,0.35)] mb-6">
         Touch
       </h2>
 
@@ -108,10 +108,10 @@ export default function ContactView({ onShowToast }: ContactViewProps) {
             type="submit"
             id="btn-contact-submit"
             disabled={isSubmitting}
-            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#2B66FF] hover:bg-blue-600 active:scale-95 text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-[0_5px_15px_rgba(43,102,255,0.2)] disabled:opacity-50 cursor-pointer"
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#FACC15] hover:bg-[#eab308] active:scale-95 text-black text-xs sm:text-sm font-semibold transition-all duration-300 shadow-[0_5px_15px_rgba(250,204,21,0.2)] disabled:opacity-50 cursor-pointer"
           >
             {isSubmitting ? (
-              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
             ) : (
               <>
                 <Send className="w-3.5 h-3.5" />
@@ -134,7 +134,7 @@ export default function ContactView({ onShowToast }: ContactViewProps) {
               href={social.url}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-lg bg-zinc-950/50 border border-zinc-900 text-zinc-500 hover:text-white hover:border-zinc-800 transition-colors duration-300"
+              className="p-2 rounded-lg bg-zinc-950/50 text-zinc-500 hover:text-white transition-colors duration-300 social-glow-btn"
               title={social.name}
             >
               {social.icon}

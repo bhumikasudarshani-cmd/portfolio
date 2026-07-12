@@ -62,7 +62,7 @@ export default function SkillList({
   };
 
   return (
-    <div className="space-y-9 w-full max-w-4xl mx-auto py-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 w-full">
       {skills.map((skill, index) => {
         const isActive = activeSkillId === skill.id;
 

@@ -7,6 +7,8 @@ interface SideHeadingProps {
 }
 
 export default function SideHeading({ activeTab }: SideHeadingProps) {
+  if (activeTab === "HOME") return null;
+
   const headings: Record<TabType, { line1: string; line2: string; line3: string }> = {
     HOME: {
       line1: "",

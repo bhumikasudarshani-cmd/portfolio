@@ -22,31 +22,24 @@ export default function EducationView() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 w-full select-none"
+      className="flex flex-col lg:items-end items-start justify-start gap-6 w-full select-none"
       id="education-view-section"
     >
-      {/* Left Column: Title Block */}
-      <div className="flex-1 flex flex-col items-start text-left">
-        <div className="flex items-center gap-3">
-          <span className="w-6 h-[2px] bg-[#EAB308]" />
-          <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#EAB308] uppercase">
-            EDUCATION
-          </span>
-        </div>
-        
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-1.5 mb-4 leading-tight font-sans">
+      {/* Title Block - Aligned right on desktop, left on mobile */}
+      <div className="flex flex-col lg:items-end items-start lg:text-right text-left w-full lg:w-[380px]">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-1.5 mb-2 leading-tight font-sans">
           Academic journey
         </h2>
       </div>
 
-      {/* Right Column: Square Card */}
+      {/* Card Wrapper - Aligned right on desktop, full-width/left-aligned on mobile */}
       <div className="w-full lg:w-[380px] flex-shrink-0">
         {educationList.map((edu) => {
           const isCurrent = edu.period.includes("PRESENT");
           return (
             <div
               key={edu.id}
-              className="w-full p-6 rounded-none bg-white/[0.02] backdrop-blur-md border border-white/10 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 flex flex-col gap-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
+              className="w-full p-6 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-white/10 hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 flex flex-col gap-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
             >
               <span className={`text-[10px] sm:text-xs font-bold tracking-wider uppercase ${isCurrent ? "text-[#EAB308]" : "text-zinc-500"}`}>
                 {edu.period}
@@ -56,9 +49,7 @@ export default function EducationView() {
                 {edu.degree}
               </h3>
 
-              <div className="h-px bg-zinc-900 w-full my-1" />
-
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-1.5 mt-1">
                 {edu.details.map((detail, dIdx) => (
                   <p
                     key={dIdx}
