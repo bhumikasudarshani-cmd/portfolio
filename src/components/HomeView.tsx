@@ -20,7 +20,7 @@ export default function HomeView({ onNavigate, onShowToast }: HomeViewProps) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 30 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col items-start select-none"
+      className="flex flex-col items-center lg:items-start text-center lg:text-left select-none w-full"
       id="home-view"
     >
       <span className="text-zinc-300 font-light text-lg sm:text-xl md:text-2xl tracking-wide">
@@ -40,7 +40,7 @@ export default function HomeView({ onNavigate, onShowToast }: HomeViewProps) {
         Computer Science Undergrad, Full-Stack Development, and everything in between.
       </p>
 
-      <div className="flex items-center gap-3 sm:gap-4 mt-8 flex-wrap">
+      <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-8 flex-wrap w-full">
         <button
           onClick={handleDownload}
           id="btn-download-resume"

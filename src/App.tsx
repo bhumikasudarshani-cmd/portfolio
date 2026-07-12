@@ -49,7 +49,7 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen w-full text-white relative overflow-x-hidden font-sans select-none"
+      className="min-h-[100dvh] w-full text-white relative overflow-x-hidden font-sans select-none"
       id="portfolio-root"
     >
       {/* Fixed background black color and canvas sequence */}
@@ -61,9 +61,9 @@ export default function App() {
         {/* Animation Container wrapping all transparent scroll-animated sections */}
         <div className="w-full relative overflow-hidden" id="animation-container">
           {/* Section 1: Header + Hero Grid + Footer */}
-          <div id="home" className="w-full min-h-screen flex flex-col justify-between relative">
+          <div id="home" className="w-full min-h-[100dvh] flex flex-col justify-between relative px-4 sm:px-12">
             {/* Top Header & Navigation */}
-            <header className="w-full max-w-7xl mx-auto px-6 sm:px-12 py-6 sm:py-8 flex justify-between items-center z-20">
+            <header className="w-full max-w-7xl mx-auto py-4 sm:py-8 flex justify-between items-center z-20">
               <div className="flex items-center">
                 <a
                   href="#home"
@@ -77,7 +77,7 @@ export default function App() {
             </header>
 
             {/* Hero Grid Content */}
-            <main className="w-full max-w-7xl mx-auto px-6 sm:px-12 flex-1 flex items-center justify-center relative z-10 py-6 lg:py-10">
+            <main className="w-full max-w-7xl mx-auto flex-1 flex items-center justify-center relative z-10 py-4 lg:py-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-16 w-full">
                 <section className="lg:col-span-7 flex flex-col justify-center min-h-[360px] sm:min-h-[400px] w-full">
                   <HomeView onNavigate={(tab) => {
